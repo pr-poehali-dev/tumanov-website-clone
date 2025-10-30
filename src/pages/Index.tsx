@@ -1,117 +1,127 @@
 import Icon from '@/components/ui/icon';
+import { useEffect, useState } from 'react';
+
+const Snowflake = ({ delay, duration, left }: { delay: number; duration: number; left: string }) => (
+  <div
+    className="absolute text-white/30 pointer-events-none"
+    style={{
+      left,
+      animation: `snowfall ${duration}s linear infinite`,
+      animationDelay: `${delay}s`,
+      fontSize: `${Math.random() * 10 + 10}px`,
+    }}
+  >
+    ❄
+  </div>
+);
 
 const Index = () => {
+  const [snowflakes, setSnowflakes] = useState<Array<{ id: number; delay: number; duration: number; left: string }>>([]);
+
+  useEffect(() => {
+    const flakes = Array.from({ length: 15 }, (_, i) => ({
+      id: i,
+      delay: Math.random() * 10,
+      duration: Math.random() * 10 + 15,
+      left: `${Math.random() * 100}%`,
+    }));
+    setSnowflakes(flakes);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white">
-      <div className="max-w-4xl mx-auto px-6 py-20">
-        <header className="mb-32 animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-light mb-6 tracking-tight">
-            Привет, я <span className="font-semibold">Александр</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl">
-            Дизайнер интерфейсов и творческий разработчик
-          </p>
-        </header>
+    <div 
+      className="min-h-screen relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, #3a4f6f 0%, #4a5f7f 50%, #3a4f6f 100%)',
+        backgroundImage: `
+          linear-gradient(135deg, rgba(58, 79, 111, 0.9) 0%, rgba(74, 95, 127, 0.9) 50%, rgba(58, 79, 111, 0.9) 100%),
+          url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80')
+        `,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundBlendMode: 'overlay',
+      }}
+    >
+      {snowflakes.map((flake) => (
+        <Snowflake key={flake.id} delay={flake.delay} duration={flake.duration} left={flake.left} />
+      ))}
 
-        <section className="mb-32 animate-fade-in-up" style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}>
-          <h2 className="text-4xl font-light mb-8 tracking-tight">Обо мне</h2>
-          <div className="space-y-6 text-lg leading-relaxed text-foreground/80">
-            <p>
-              Я создаю цифровые продукты на стыке дизайна и технологий. 
-              Мой подход основан на минимализме, функциональности и внимании к деталям.
-            </p>
-            <p>
-              Работаю с интерфейсами, которые решают реальные задачи пользователей. 
-              Верю, что хороший дизайн незаметен — он просто работает.
-            </p>
-            <p>
-              В свободное время изучаю типографику, фотографирую городскую архитектуру 
-              и экспериментирую с новыми технологиями.
-            </p>
-          </div>
-        </section>
-
-        <section className="mb-32 animate-fade-in-up" style={{ animationDelay: '0.4s', opacity: 0, animationFillMode: 'forwards' }}>
-          <h2 className="text-4xl font-light mb-8 tracking-tight">Навыки</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <Icon name="Palette" className="text-primary mt-1" size={24} />
-                <div>
-                  <h3 className="font-medium text-lg mb-1">UI/UX Дизайн</h3>
-                  <p className="text-muted-foreground">Figma, Adobe XD, Sketch</p>
-                </div>
+      <div className="min-h-screen flex items-center justify-center px-4 py-12 relative z-10">
+        <div className="w-full max-w-2xl">
+          <div 
+            className="backdrop-blur-xl bg-white/10 rounded-3xl p-12 shadow-2xl border border-white/20 animate-fade-in"
+            style={{
+              boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+            }}
+          >
+            <div className="flex flex-col items-center">
+              <div className="mb-8 relative">
+                <div className="absolute -top-2 -right-2 text-2xl animate-float">❄️</div>
+                <div className="absolute -bottom-2 -left-2 text-xl animate-float" style={{ animationDelay: '1s' }}>💫</div>
+                <img
+                  src="https://cdn.poehali.dev/files/4e7ee91d-6ac8-4a4d-84f2-4f70adddd8d6.png"
+                  alt="Avatar"
+                  className="w-32 h-32 rounded-full object-cover border-4 border-white/30"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Tumanov";
+                  }}
+                />
               </div>
-              <div className="flex items-start gap-3">
-                <Icon name="Code" className="text-primary mt-1" size={24} />
-                <div>
-                  <h3 className="font-medium text-lg mb-1">Разработка</h3>
-                  <p className="text-muted-foreground">React, TypeScript, CSS</p>
+
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-3 tracking-tight">
+                Туманов
+              </h1>
+              
+              <p className="text-xl text-white/70 mb-12">
+                @zacbatah
+              </p>
+
+              <div className="w-full space-y-4">
+                <a
+                  href="#translator"
+                  className="group w-full flex items-center justify-center gap-3 px-6 py-4 bg-white/15 backdrop-blur-md rounded-2xl border border-white/20 text-white hover:bg-white/25 transition-all duration-300 hover:scale-105"
+                >
+                  <span className="text-xl">📰</span>
+                  <span className="text-lg font-medium">Переходник Туманова</span>
+                </a>
+
+                <a
+                  href="#price"
+                  className="group w-full flex items-center justify-center gap-3 px-6 py-4 bg-white/15 backdrop-blur-md rounded-2xl border border-white/20 text-white hover:bg-white/25 transition-all duration-300 hover:scale-105"
+                >
+                  <span className="text-xl">💰</span>
+                  <span className="text-lg font-medium">Прайс Туманова</span>
+                </a>
+
+                <a
+                  href="#blog"
+                  className="group w-full flex items-center justify-center gap-3 px-6 py-4 bg-white/15 backdrop-blur-md rounded-2xl border border-white/20 text-white hover:bg-white/25 transition-all duration-300 hover:scale-105"
+                >
+                  <span className="text-xl">📝</span>
+                  <span className="text-lg font-medium">Блог Туманова</span>
+                </a>
+
+                <a
+                  href="https://www.tiktok.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group w-full flex items-center justify-center gap-3 px-6 py-4 bg-white/15 backdrop-blur-md rounded-2xl border border-white/20 text-white hover:bg-white/25 transition-all duration-300 hover:scale-105"
+                >
+                  <span className="text-xl">🎵</span>
+                  <span className="text-lg font-medium">TikTok</span>
+                </a>
+
+                <div className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-md rounded-2xl border border-white/20 text-white">
+                  <span className="text-xl">🎵</span>
+                  <span className="text-lg font-medium">ailie - север</span>
+                  <button className="ml-auto w-10 h-10 flex items-center justify-center bg-purple-500 rounded-full hover:bg-purple-600 transition-colors">
+                    <Icon name="Play" size={18} />
+                  </button>
                 </div>
               </div>
             </div>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <Icon name="Lightbulb" className="text-primary mt-1" size={24} />
-                <div>
-                  <h3 className="font-medium text-lg mb-1">Креативность</h3>
-                  <p className="text-muted-foreground">Концепции, брендинг, типографика</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Icon name="Users" className="text-primary mt-1" size={24} />
-                <div>
-                  <h3 className="font-medium text-lg mb-1">Коммуникация</h3>
-                  <p className="text-muted-foreground">Работа с командой, презентации</p>
-                </div>
-              </div>
-            </div>
           </div>
-        </section>
-
-        <section className="mb-32 animate-fade-in-up" style={{ animationDelay: '0.6s', opacity: 0, animationFillMode: 'forwards' }}>
-          <h2 className="text-4xl font-light mb-8 tracking-tight">Контакты</h2>
-          <div className="space-y-4">
-            <a 
-              href="mailto:hello@example.com" 
-              className="flex items-center gap-3 text-lg hover:text-primary transition-colors group"
-            >
-              <Icon name="Mail" size={24} className="group-hover:scale-110 transition-transform" />
-              <span>hello@example.com</span>
-            </a>
-            <a 
-              href="https://t.me/username" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 text-lg hover:text-primary transition-colors group"
-            >
-              <Icon name="Send" size={24} className="group-hover:scale-110 transition-transform" />
-              <span>Telegram</span>
-            </a>
-            <a 
-              href="https://github.com/username" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 text-lg hover:text-primary transition-colors group"
-            >
-              <Icon name="Github" size={24} className="group-hover:scale-110 transition-transform" />
-              <span>GitHub</span>
-            </a>
-            <a 
-              href="https://linkedin.com/in/username" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 text-lg hover:text-primary transition-colors group"
-            >
-              <Icon name="Linkedin" size={24} className="group-hover:scale-110 transition-transform" />
-              <span>LinkedIn</span>
-            </a>
-          </div>
-        </section>
-
-        <footer className="border-t border-border pt-8 text-center text-muted-foreground animate-fade-in-up" style={{ animationDelay: '0.8s', opacity: 0, animationFillMode: 'forwards' }}>
-          <p className="text-sm">© 2024 Александр. Все права защищены.</p>
-        </footer>
+        </div>
       </div>
     </div>
   );
