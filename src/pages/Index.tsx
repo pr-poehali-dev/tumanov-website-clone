@@ -101,11 +101,13 @@ const Index = () => {
                 </a>
 
                 <a
-                  href="#blog"
+                  href="https://t.me/YaSeksiBoy"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group w-full flex items-center justify-center gap-3 px-6 py-4 bg-white/15 backdrop-blur-md rounded-2xl border border-white/20 text-white hover:bg-white/25 transition-all duration-300 hover:scale-105"
                 >
                   <span className="text-xl">📝</span>
-                  <span className="text-lg font-medium">Блог Александра Питонова</span>
+                  <span className="text-lg font-medium">Академия Александра</span>
                 </a>
 
                 <a
