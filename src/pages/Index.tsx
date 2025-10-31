@@ -15,7 +15,7 @@ const Snowflake = ({ delay, duration, left }: { delay: number; duration: number;
     <img 
       src="https://cdn.poehali.dev/files/c12b2f69-b4ba-49c7-9c87-f69c5f46e986.png" 
       alt="Python logo" 
-      className="w-full h-auto opacity-30"
+      className="w-full h-auto opacity-30 mix-blend-screen"
     />
   </div>
 );
@@ -83,11 +83,13 @@ const Index = () => {
 
               <div className="w-full space-y-4">
                 <a
-                  href="#translator"
+                  href="https://t.me/YaSeksiBoy"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group w-full flex items-center justify-center gap-3 px-6 py-4 bg-white/15 backdrop-blur-md rounded-2xl border border-white/20 text-white hover:bg-white/25 transition-all duration-300 hover:scale-105"
                 >
                   <span className="text-xl">📰</span>
-                  <span className="text-lg font-medium">Переходник Александра Питонова</span>
+                  <span className="text-lg font-medium">Био Александра Питонова</span>
                 </a>
 
                 <a
