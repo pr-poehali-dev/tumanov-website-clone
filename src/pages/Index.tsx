@@ -60,16 +60,13 @@ const Index = () => {
             }}
           >
             <div className="flex flex-col items-center">
-              <div className="mb-8 relative">
+              <div className="mb-8 relative flex justify-center">
                 <div className="absolute -top-2 -right-2 text-2xl animate-float">❄️</div>
                 <div className="absolute -bottom-2 -left-2 text-xl animate-float" style={{ animationDelay: '1s' }}>💫</div>
                 <img
-                  src="https://cdn.poehali.dev/files/4e7ee91d-6ac8-4a4d-84f2-4f70adddd8d6.png"
+                  src="https://cdn.poehali.dev/files/471c770d-d177-4a4a-a509-eabfa8ebe2df.jpg"
                   alt="Avatar"
                   className="w-32 h-32 rounded-full object-cover border-4 border-white/30"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=AlexandrPitonov";
-                  }}
                 />
               </div>
 
