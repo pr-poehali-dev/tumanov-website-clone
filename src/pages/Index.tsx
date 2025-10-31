@@ -63,13 +63,13 @@ const Index = () => {
                   alt="Avatar"
                   className="w-32 h-32 rounded-full object-cover border-4 border-white/30"
                   onError={(e) => {
-                    e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Tumanov";
+                    e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=AlexandrPitonov";
                   }}
                 />
               </div>
 
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-3 tracking-tight">
-                Туманов
+                Александр Питонов
               </h1>
               
               <p className="text-xl text-white/70 mb-12">
@@ -82,7 +82,7 @@ const Index = () => {
                   className="group w-full flex items-center justify-center gap-3 px-6 py-4 bg-white/15 backdrop-blur-md rounded-2xl border border-white/20 text-white hover:bg-white/25 transition-all duration-300 hover:scale-105"
                 >
                   <span className="text-xl">📰</span>
-                  <span className="text-lg font-medium">Переходник Туманова</span>
+                  <span className="text-lg font-medium">Переходник Александра Питонова</span>
                 </a>
 
                 <a
@@ -90,7 +90,7 @@ const Index = () => {
                   className="group w-full flex items-center justify-center gap-3 px-6 py-4 bg-white/15 backdrop-blur-md rounded-2xl border border-white/20 text-white hover:bg-white/25 transition-all duration-300 hover:scale-105"
                 >
                   <span className="text-xl">💰</span>
-                  <span className="text-lg font-medium">Прайс Туманова</span>
+                  <span className="text-lg font-medium">Прайс Александра Питонова</span>
                 </a>
 
                 <a
@@ -98,7 +98,7 @@ const Index = () => {
                   className="group w-full flex items-center justify-center gap-3 px-6 py-4 bg-white/15 backdrop-blur-md rounded-2xl border border-white/20 text-white hover:bg-white/25 transition-all duration-300 hover:scale-105"
                 >
                   <span className="text-xl">📝</span>
-                  <span className="text-lg font-medium">Блог Туманова</span>
+                  <span className="text-lg font-medium">Блог Александра Питонова</span>
                 </a>
 
                 <a
