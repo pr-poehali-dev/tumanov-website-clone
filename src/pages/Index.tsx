@@ -78,7 +78,7 @@ const Index = () => {
               </h1>
               
               <p className="text-xl text-white/70 mb-12">
-                @zacbatah
+                @FuckPiton
               </p>
 
               <div className="w-full space-y-4">
