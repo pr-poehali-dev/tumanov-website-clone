@@ -3,16 +3,20 @@ import { useEffect, useState } from 'react';
 
 const Snowflake = ({ delay, duration, left }: { delay: number; duration: number; left: string }) => (
   <div
-    className="absolute text-blue-400/40 pointer-events-none animate-snowfall"
+    className="absolute pointer-events-none animate-snowfall"
     style={{
       left,
       animationDuration: `${duration}s`,
       animationDelay: `${delay}s`,
-      fontSize: `${Math.random() * 15 + 20}px`,
-      top: '-50px'
+      width: `${Math.random() * 30 + 30}px`,
+      top: '-100px'
     }}
   >
-    🐍
+    <img 
+      src="https://cdn.poehali.dev/files/c12b2f69-b4ba-49c7-9c87-f69c5f46e986.png" 
+      alt="Python logo" 
+      className="w-full h-auto opacity-30"
+    />
   </div>
 );
 
@@ -69,7 +73,7 @@ const Index = () => {
                 />
               </div>
 
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-3 tracking-tight">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-3 tracking-tight text-center">
                 Александр Питонов
               </h1>
               
