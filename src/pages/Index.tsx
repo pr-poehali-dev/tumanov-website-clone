@@ -110,13 +110,13 @@ const Index = () => {
                 </a>
 
                 <a
-                  href="https://www.tiktok.com"
+                  href="https://t.me/+G5Z_V44vhuRjOWYy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group w-full flex items-center justify-center gap-3 px-6 py-4 bg-white/15 backdrop-blur-md rounded-2xl border border-white/20 text-white hover:bg-white/25 transition-all duration-300 hover:scale-105"
                 >
                   <span className="text-xl">🎵</span>
-                  <span className="text-lg font-medium">TikTok</span>
+                  <span className="text-lg font-medium">Кенты</span>
                 </a>
 
                 <div className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-md rounded-2xl border border-white/20 text-white">
