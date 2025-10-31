@@ -3,15 +3,15 @@ import { useEffect, useState } from 'react';
 
 const Snowflake = ({ delay, duration, left }: { delay: number; duration: number; left: string }) => (
   <div
-    className="absolute text-white/30 pointer-events-none"
+    className="absolute text-blue-400/40 pointer-events-none"
     style={{
       left,
       animation: `snowfall ${duration}s linear infinite`,
       animationDelay: `${delay}s`,
-      fontSize: `${Math.random() * 10 + 10}px`,
+      fontSize: `${Math.random() * 15 + 20}px`,
     }}
   >
-    ❄
+    🐍
   </div>
 );
 
